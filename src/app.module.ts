@@ -26,6 +26,8 @@ import { Disciplina } from './academic/disciplina/entities/disciplina.entity';
 import { Matricula } from './academic/matricula/entities/matricula.entity';
 import { Periodo } from './academic/periodo/entities/periodo.entity';
 import { Turma } from './academic/turma/entities/turma.entity';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -106,5 +108,7 @@ import { Turma } from './academic/turma/entities/turma.entity';
     InstitutionalModule,
     AcademicModule,
   ],
+  controllers: [AppController],
+  providers: [AppService]
 })
 export class AppModule {}
