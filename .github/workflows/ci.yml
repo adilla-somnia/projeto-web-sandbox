@@ -42,10 +42,10 @@ jobs:
 
       - name: Run E2E Tests
         env:
-          DB_MYSQL_HOST: localhost
-          DB_MYSQL_PORT: 3306
-          DB_MYSQL_USER: root
-          DB_MYSQL_PASS: test_pass
-          DB_MYSQL_NAME: test_db
-          DB_MONGO_URI: mongodb://localhost:27017/test_db
+          DB_HOST: localhost
+          DB_PORT: 3306
+          DB_USER: root
+          DB_PASS: test_pass
+          DB_NAME: test_db
+          MONGO_URL: mongodb://localhost:27017/test_db
         run: npm run test:e2e
