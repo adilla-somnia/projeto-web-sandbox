@@ -48,4 +48,5 @@ jobs:
           DB_PASS: test_pass
           DB_NAME: test_db
           MONGO_URL: mongodb://localhost:27017/test_db
+          JWT_SECRET: my-secret
         run: npm run test:e2e
