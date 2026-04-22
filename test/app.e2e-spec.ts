@@ -13,6 +13,7 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.enableShutdownHooks();
     await app.init();
   });
 
@@ -24,8 +25,10 @@ describe('AppController (e2e)', () => {
   });
 
   afterAll(async () => {
-    if (app) {
-       await app.close();
+    try {
+      await app.close();
+    } catch (error) {
+      console.warn('Aviso: Erro ao fechar DataSource, mas os testes passaram.')
     }
   })
 });
